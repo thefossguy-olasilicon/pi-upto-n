@@ -316,5 +316,5 @@ mod fraction {
 }
 
 fn main() {
-    println!("{}", pi(10_000));
+    println!("{}", pi(1_000));
 }
