@@ -7,6 +7,7 @@ use num_bigint::{
 use std::{
     convert::TryFrom,
     ops::{Not, Sub},
+    time::Instant,
     *,
 };
 
@@ -316,5 +317,13 @@ mod fraction {
 }
 
 fn main() {
-    println!("{}", pi(1_000));
+    for i in 1..101 {
+        let now = Instant::now();
+        {
+            let _pi_value = pi(1_000);
+        }
+        let elapsed = now.elapsed();
+
+        println!("{}: {:.5?}", i, elapsed);
+    }
 }
